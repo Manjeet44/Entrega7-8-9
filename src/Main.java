@@ -134,8 +134,10 @@ public class Main {
         try{
             InputStream archivoLocal = new FileInputStream(fileIn);
             byte datos[] = archivoLocal.readAllBytes();
+            archivoLocal.close();
             PrintStream destino = new PrintStream(fileOut);
             destino.write(datos);
+            destino.close();
 
         } catch ( Exception e) {
             System.out.println(e.getMessage());
